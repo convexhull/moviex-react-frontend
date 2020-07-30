@@ -4,9 +4,8 @@ import Logo from "../../Assets/logo.png";
 import "./Header.scss";
 import { withRouter } from "react-router";
 import SearchBar from "../SearchBar/SearchBar";
-
-
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 
 class Header extends Component {
@@ -36,7 +35,7 @@ class Header extends Component {
                         <SearchBar currentRoute={this.props.currentRoute} />
                     </div>
 
-                    {this.props.currentUser ? (
+                    {/* {this.props.currentUser ? (
                         <div className="header__options-secondary">
                             <Link className="header__option" to="">
                                 Hi, {this.props.currentUser.displayName}
@@ -60,7 +59,7 @@ class Header extends Component {
                                     Sign In
                     </Link>
                             </div>
-                        )}
+                        )} */}
                 </div>
                 <FontAwesomeIcon
                     icon={faBars}
