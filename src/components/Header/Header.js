@@ -1,11 +1,12 @@
 import React , { Component }from "react";
 import { Link } from "react-router-dom";
-import Logo from "../../Assets/logo.png";
+import Logo from "../../assets/logo.png";
 import "./Header.scss";
 import { withRouter } from "react-router";
 import SearchBar from "../SearchBar/SearchBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import NavMenu from './Navmenu';
 
 
 class Header extends Component {
