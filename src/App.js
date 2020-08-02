@@ -1,5 +1,11 @@
 import React from 'react';
 import Header from "./components/Header/Header";
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { compose } from 'redux';
+
+import { setCurrentUser } from "./Redux/User/user-actions";
+import { selectCurrentUser } from "./Redux/User/user-selectors";
 
 import './App.css';
 
@@ -35,4 +41,21 @@ function App() {
 }
 
 
-export default App;
+
+const mapStateToProps = state => ({
+  currentUser: selectCurrentUser(state)
+});
+
+const mapDispatchToProps = dispatch => ({
+  setCurrentUser: user => dispatch(setCurrentUser(user))
+});
+
+
+export default compose(
+  withRouter,
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )
+)(App);
+
